@@ -26,8 +26,9 @@ class DBClient {
    * @returns {boolean}
    */
   isAlive() {
-    return this.client.isConnected();
+    return this.client && this.client.topology && this.client.topology.isConnected();
   }
+
 
   /**
    * Retrieves the number of users in the database.
